@@ -1,0 +1,23 @@
+﻿@model IndexViewModel
+
+<h1>@Model.SelectedTeam</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+    </tr>
+    @foreach (var x in Model.Bowlers)
+    {
+        <tr>
+            <td>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName</td>
+            <td>@x.BowlerAddress, @x.BowlerCity @x.BowlerState @x.BowlerZip</td>
+            <td>@x.BowlerPhoneNumber</td>
+        </tr>
+    }
+</table>
+
+<div page-info="@Model.PageNumberInfo" page-url-teamName="@Model.SelectedTeam" >
+
+</div>

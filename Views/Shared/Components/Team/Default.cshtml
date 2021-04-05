@@ -1,0 +1,14 @@
+﻿@model TeamViewModel
+
+<div class="container">
+    <div class="row">
+        <a asp-action="Index" asp-controller="Home" asp-route-teamId="">Home</a>
+    </div>
+
+    @foreach (var x in Model.Teams)
+    {
+        <div class="row">
+            <a asp-action="Index" asp-controller="Home" asp-route-teamId="@x.TeamId" asp-route-teamName="@x.TeamName">@x.TeamName</a>
+        </div>
+    }
+</div>
